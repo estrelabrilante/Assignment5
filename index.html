@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vue Lists and Conditional Content</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Jost:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://unpkg.com/vue@next" defer></script>
+    <script src="app.js" defer></script>
+  </head>
+  <body>
+    <header>
+      <h1>Assignment</h1>
+    </header>
+    <section id="assignment">
+      <!--1) Add code to manage a list of tasks in a Vue app -->
+      <!-- when clicking "Add Task" a new task with the enter -->
+      <input type="text" v-model="enteredInput" />
+      <button @click="addTask">Add Task</button>
+      <ul v-if="tasksVisible">
+        <ul v-for="task in tasks">
+          <!--2) Output the list of tasks here -->
+          <p>{{task}}</p>
+        </ul>
+      </ul>
+      <br />
+      <br />
+      <!-- 3) when the button is pressed,the list shows -->
+      <!-- BONUS: Also update the button caption -->
+      <button @click="toggleList">{{buttonCaption}}</button>
+    </section>
+  </body>
+</html>
